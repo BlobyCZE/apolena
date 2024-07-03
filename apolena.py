@@ -10,7 +10,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='_', intents=intents)
 
 @bot.event
-async def on_guild_channel_delete(channel);
+async def on_guild_channel_delete(channel):
     logs = await channel.guild.audit_logs(limit=1, action=discord.AuditLogAction.role_delete).flatten()
     if logs:
         entry = logs[0]
